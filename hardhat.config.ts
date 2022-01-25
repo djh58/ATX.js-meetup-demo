@@ -29,9 +29,15 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
+    kovan: {
+      chainId: 42,
+      url: envconfig.kovan.provider_url,
+      accounts: [`0x${envconfig.kovan.private_key}`],
+    },
     rinkeby: {
+      chainId: 4,
       url: envconfig.rinkeby.provider_url,
-      //   accounts: [`0x${envconfig.rinkeby.private_key}`],
+      accounts: [`0x${envconfig.rinkeby.private_key}`],
     },
     mainnet: {
       url: envconfig.mainnet.provider_url,
@@ -41,7 +47,7 @@ const config: HardhatUserConfig = {
   namedAccounts: {
     deployer: {
       default: 0,
-      rinkeby: `privatekey://${envconfig.rinkeby.private_key}`,
+      kovan: `privatekey://${envconfig.kovan.private_key}`,
       mainnet: `privatekey://${envconfig.mainnet.private_key}`,
     },
   },
