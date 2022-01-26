@@ -10,6 +10,9 @@
     "lint": "npx prettier '**/*.{json,sol,md}' --write",
     "clean:contracts": "npx hardhat clean",
     "compile": "npx hardhat compile",
+    "deploy:local": "npx hardhat deploy --tags staking",
+    "deploy:kovan": "npx hardhat --network kovan deploy --tags staking",
+    "deploy:rinkeby": "npx hardhat --network rinkeby deploy --tags staking",
     "build": "yarn lint && yarn clean:contracts && yarn compile",
     "test": "npx hardhat test",
     "size": "npx hardhat size-contracts"
@@ -31,7 +34,7 @@
     "ethers": "^5.5.1",
     "hardhat": "^2.6.8",
     "hardhat-contract-sizer": "^2.1.1",
-    "hardhat-deploy": "^0.9.8",
+    "hardhat-deploy": "^0.7.9",
     "hardhat-deploy-ethers": "^0.3.0-beta.11",
     "hardhat-gas-reporter": "^1.0.7",
     "hardhat-typechain": "^0.3.5",
