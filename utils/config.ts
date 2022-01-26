@@ -2,7 +2,7 @@ import { config as dotenvConfig } from "dotenv";
 dotenvConfig();
 
 interface IConfig {
-  rinkeby: {
+  kovan: {
     provider_url: string;
     private_key: string;
   };
@@ -31,9 +31,9 @@ export const getEnv = (key: string, defaultValue?: any) => {
 };
 
 export const envconfig: IConfig = {
-  rinkeby: {
-    provider_url: getEnv("RINKEBY_PROVIDER_URL", ""),
-    private_key: getEnv("RINKEBY_PRIVATE_KEY", ""),
+  kovan: {
+    provider_url: getEnv("KOVAN_PROVIDER_URL", ""),
+    private_key: getEnv("KOVAN_PRIVATE_KEY", ""),
   },
   mainnet: {
     provider_url: getEnv("MAINNET_PROVIDER_URL", ""),

@@ -11,6 +11,7 @@
     "clean:contracts": "npx hardhat clean",
     "compile": "npx hardhat compile",
     "build": "yarn lint && yarn clean:contracts && yarn compile",
+    "deploy:kovan": "yarn hardhat --network kovan deploy --tags staking",
     "test": "npx hardhat test",
     "size": "npx hardhat size-contracts"
   },

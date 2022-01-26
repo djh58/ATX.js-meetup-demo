@@ -8,11 +8,17 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   const { deployer } = await getNamedAccounts();
 
-  const res: DeployResult = await deploy("Test", {
+  const testToken: DeployResult = await deploy("Test", {
     from: deployer,
     log: true,
     autoMine: true,
   });
+
+  const stakeToken: DeployResult = await deploy("StakingToken", {
+    from: deployer,
+    log: true,
+    args: [testToken.address],
+  });
 };
 export default func;
-func.tags = ["test"];
+func.tags = ["staking"];
